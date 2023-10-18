@@ -54,12 +54,12 @@ function DocComponentsContent(){
                 </p>
                 Ex- 
                 <div className="mockup-code mt-4">
-                    <pre className='my-0 py-0'><code>{'const INITIAL_LEAD_OBJ = {\n   first_name : "", \n   last_name : "", \n   email : "" \n  } \n   const [leadObj, setLeadObj] = useState(INITIAL_LEAD_OBJ) \n   const updateFormValue = ({updateType, value}) => {\n    setErrorMessage("") \n    setLeadObj({...leadObj, [updateType] : value})\n   }\n\n<InputText type="text" defaultValue={leadObj.first_name}  \n  updateType="first_name" containerStyle="mt-4"  \n  labelTitle="First Name" updateFormValue={updateFormValue}/>'}</code></pre>
+                    <pre className='my-0 py-0'><code>{'const INITIAL_CUSTOMER_OBJ = {\n   first_name : "", \n   last_name : "", \n   email : "" \n  } \n   const [customerObj, setCustomerObj] = useState(INITIAL_CUSTOMER_OBJ) \n   const updateFormValue = ({updateType, value}) => {\n    setErrorMessage("") \n    setCustomerObj({...customerObj, [updateType] : value})\n   }\n\n<InputText type="text" defaultValue={customerObj.first_name}  \n  updateType="first_name" containerStyle="mt-4"  \n  labelTitle="First Name" updateFormValue={updateFormValue}/>'}</code></pre>
                 </div>
                 <InputText type="text" defaultValue={"input value"}  updateType="first_name" containerStyle="mt-3" labelTitle="Label Title" updateFormValue={updateFormValue}/>
                 
 
-               <p> This example is from add new lead modal, here we are importing component for creating text input and passing some props to handle its content and state variable. Description of props are as follows - </p>
+               <p> This example is from add new customer modal, here we are importing component for creating text input and passing some props to handle its content and state variable. Description of props are as follows - </p>
                 <ul>
                   <li><span className='font-bold'>type</span> - Input type value like number, date, time etc.. </li>
                   <li><span className='font-bold'>updateType</span> - This is used to update state variable in parent component</li>
@@ -74,7 +74,7 @@ function DocComponentsContent(){
                  {/* Cards */}
                  <h2 id="component3">Cards</h2>
                 <p>
-                    <a href="https://daisyui.com/components/card/" target="_blank">Daisy UI</a> already have many cards layout, on top of that we have added one card component that accept title props and shows children inside its body. Also there is a divider between title and body of card. On more provision has been added to add buttons on top left side of card using TopSideButtons props (check leads page).
+                    <a href="https://daisyui.com/components/card/" target="_blank">Daisy UI</a> already have many cards layout, on top of that we have added one card component that accept title props and shows children inside its body. Also there is a divider between title and body of card. On more provision has been added to add buttons on top left side of card using TopSideButtons props (check customers page).
 
                 </p>
                 Ex - 

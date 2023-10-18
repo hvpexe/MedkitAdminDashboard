@@ -110,7 +110,7 @@ function GettingStartedContent(){
                     <li>Configuring a Redux store is too complicated</li>
                     <li>I have to add a lot of packages to get Redux to do anything useful</li>
                     <li>Redux requires too much boilerplate code"</li>
-                    This library has been configured and used for showing notifications, modals and loading data from API in leads page.
+                    This library has been configured and used for showing notifications, modals and loading data from API in customers page.
                  </p>
 
 

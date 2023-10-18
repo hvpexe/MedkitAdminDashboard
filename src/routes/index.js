@@ -6,8 +6,7 @@ const Dashboard = lazy(() => import('../pages/protected/Dashboard'))
 const Page404 = lazy(() => import('../pages/protected/404'))
 const Blank = lazy(() => import('../pages/protected/Blank'))
 const Charts = lazy(() => import('../pages/protected/Charts'))
-const Leads = lazy(() => import('../pages/protected/Leads'))
-const Integration = lazy(() => import('../pages/protected/Integration'))
+const Customers = lazy(() => import('../pages/protected/Customers'))
 const Transactions = lazy(() => import('../pages/protected/Transactions'))
 const Bills = lazy(() => import('../pages/protected/Bills'))
 const GettingStarted = lazy(() => import('../pages/GettingStarted'))
@@ -21,8 +20,8 @@ const routes = [
     component: Dashboard, // view rendered
   },
   {
-    path: '/leads',
-    component: Leads,
+    path: '/customers',
+    component: Customers,
   },
   {
     path: '/transactions',
@@ -43,10 +42,6 @@ const routes = [
   {
     path: '/components',
     component: DocComponents,
-  },
-  {
-    path: '/integration',
-    component: Integration,
   },
   {
     path: '/charts',

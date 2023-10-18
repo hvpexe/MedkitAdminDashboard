@@ -18,7 +18,6 @@ initializeApp()
 // Check for login and initialize axios
 const token = checkAuth()
 
-
 function App() {
 
   useEffect(() => {
@@ -37,7 +36,7 @@ function App() {
           {/* Place new routes over this */}
           <Route path="/app/*" element={<Layout />} />
 
-          <Route path="*" element={<Navigate to={token ? "/app/welcome" : "/login"} replace />}/>
+          <Route path="*" element={<Navigate to={token ? "/app/dashboard" : "/login"} replace />}/>
 
         </Routes>
       </Router>
