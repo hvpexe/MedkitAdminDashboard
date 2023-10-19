@@ -20,8 +20,8 @@ export const customersSlice = createSlice({
 
 
         addNewCustomer: (state, action) => {
-            let {newcustomerObj} = action.payload
-            state.customers = [...state.customers, newcustomerObj]
+            let {newCustomerObj} = action.payload
+            state.customers = [...state.customers, newCustomerObj]
         },
 
         deleteCustomer: (state, action) => {

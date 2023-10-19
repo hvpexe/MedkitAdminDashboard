@@ -7,8 +7,8 @@ const Page404 = lazy(() => import('../pages/protected/404'))
 const Blank = lazy(() => import('../pages/protected/Blank'))
 const Charts = lazy(() => import('../pages/protected/Charts'))
 const Customers = lazy(() => import('../pages/protected/Customers'))
-const Transactions = lazy(() => import('../pages/protected/Transactions'))
-const Bills = lazy(() => import('../pages/protected/Bills'))
+const Orders = lazy(() => import('../pages/protected/Orders'))
+const OriginalMedicine = lazy(() => import('../pages/protected/OriginalMedicine'))
 const GettingStarted = lazy(() => import('../pages/GettingStarted'))
 const DocFeatures = lazy(() => import('../pages/DocFeatures'))
 const DocComponents = lazy(() => import('../pages/DocComponents'))
@@ -24,12 +24,12 @@ const routes = [
     component: Customers,
   },
   {
-    path: '/transactions',
-    component: Transactions,
+    path: '/orders',
+    component: Orders,
   },
   {
-    path: '/settings-billing',
-    component: Bills,
+    path: '/originalMedicine',
+    component: OriginalMedicine,
   },
   {
     path: '/getting-started',

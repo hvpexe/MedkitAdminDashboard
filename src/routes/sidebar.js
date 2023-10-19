@@ -29,9 +29,14 @@ const routes = [
     name: 'Customers', // name that appear in Sidebar
   },
   {
-    path: '/app/transactions', // url
+    path: '/app/orders', // url
     icon: <CurrencyDollarIcon className={iconClasses}/>, // icon component
-    name: 'Transactions', // name that appear in Sidebar
+    name: 'Orders', // name that appear in Sidebar
+  },
+  {
+    path: '/app/originalMedicine', 
+    icon: <WalletIcon className={submenuIconClasses}/>,
+    name: 'Original Medicine',
   },
   {
     path: '/app/charts', // url
@@ -58,18 +63,6 @@ const routes = [
         path: '/app/404',
         icon: <ExclamationTriangleIcon className={submenuIconClasses}/>,
         name: '404',
-      },
-    ]
-  },
-  {
-    path: '', //no url needed as this has submenu
-    icon: <Cog6ToothIcon className={`${iconClasses} inline` }/>, // icon component
-    name: 'Settings', // name that appear in Sidebar
-    submenu : [
-      {
-        path: '/app/settings-billing',
-        icon: <WalletIcon className={submenuIconClasses}/>,
-        name: 'Billing',
       },
     ]
   },

@@ -43,7 +43,7 @@ function Header() {
           <h1 className="text-2xl font-semibold ml-2">{pageTitle}</h1>
         </div>
 
-        <div className="order-last">
+        <div className="order-last  mr-4">
           {/* Profile icon, opening menu on click */}
           <div className="dropdown dropdown-end ml-4">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -55,10 +55,7 @@ function Header() {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li className="">
-                <Link to={"/app/settings-billing"}>Bill History</Link>
-              </li>
-              <div className="divider mt-0 mb-0"></div>
+              {/* <div className="divider mt-0 mb-0"></div> */}
               <li>
                 <a onClick={logoutUser}>Logout</a>
               </li>
