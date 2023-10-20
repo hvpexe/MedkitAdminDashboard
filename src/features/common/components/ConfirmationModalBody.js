@@ -3,6 +3,7 @@ import axios from 'axios'
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_CLOSE_TYPES } from '../../../utils/globalConstantUtil'
 import { deleteCustomer } from '../../customers/customerSlice'
 import { showNotification } from '../headerSlice'
+import { deleteOriginalMedicines } from '../../originalMedicine/originalMedicinesSlice'
 
 function ConfirmationModalBody({ extraObject, closeModal}){
 
@@ -12,10 +13,10 @@ function ConfirmationModalBody({ extraObject, closeModal}){
 
 
     const proceedWithYes = async() => {
-        if(type === CONFIRMATION_MODAL_CLOSE_TYPES.CUSTOMER_DELETE){
+        if(type === CONFIRMATION_MODAL_CLOSE_TYPES.MEDICINE_DELETE){
             // positive response, call api or dispatch redux function
-            dispatch(deleteCustomer({index}))
-            dispatch(showNotification({message : "Customer Deleted!", status : 1}))
+            dispatch(deleteOriginalMedicines(index))
+            dispatch(showNotification({message : "Original Deleted!", status : 1}))
         }
         closeModal()
     }

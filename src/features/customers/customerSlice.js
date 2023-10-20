@@ -17,8 +17,6 @@ export const customersSlice = createSlice({
         customers : []
     },
     reducers: {
-
-
         addNewCustomer: (state, action) => {
             let {newCustomerObj} = action.payload
             state.customers = [...state.customers, newCustomerObj]

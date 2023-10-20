@@ -1,19 +1,17 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../features/common/headerSlice'
-import OriginalMedicine from '../../features/originalMedicine'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setPageTitle } from "../../features/common/headerSlice";
+import OriginalMedicine from "../../features/originalMedicine";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+	const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "OriginalMedicines"}))
-      }, [])
+	useEffect(() => {
+		dispatch(setPageTitle({ title: "OriginalMedicines" }));
+	}, []);
 
-
-    return(
-        <OriginalMedicine />
-    )
+	return <OriginalMedicine />;
 }
 
-export default InternalPage
+export default InternalPage;
+    
