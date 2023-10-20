@@ -6,7 +6,7 @@ function ExternalPage(){
 
 
     return(
-        <div className="">
+        <div className="bg-[#ecfffd]">
                 <Login />
         </div>
     )

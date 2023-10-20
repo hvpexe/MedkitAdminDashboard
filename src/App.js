@@ -13,6 +13,10 @@ import initializeApp from "./app/init";
 // Importing pages
 const Layout = lazy(() => import("./containers/Layout"));
 const Login = lazy(() => import("./pages/Login"));
+const Home = lazy(() => import("./pages/Home"));
+const Product = lazy(() => import("./pages/Product"));
+const About = lazy(() => import("./pages/About"));
+const Cart = lazy(() => import("./pages/Cart"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 
 // Initializing different libraries
@@ -22,15 +26,19 @@ initializeApp();
 const token = checkAuth();
 
 function App() {
-	useEffect(() => {
-		// 👆 daisy UI themes initialization
-		themeChange(false);
-	}, []);
+	// useEffect(() => {
+	// 	// 👆 daisy UI themes initialization
+	// 	themeChange(false);
+	// }, []);
 
 	return (
 		<>
 			<Router>
 				<Routes>
+					<Route path="/home" element={<Home />} />
+					<Route path="/product" element={<Product />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/cart" element={<Cart />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/documentation" element={<Documentation />} />
 

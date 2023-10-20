@@ -1,13 +1,13 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Home from "../features/user/Home";
+import About from "../features/user/About";
 import NavbarGuest from "../features/user/components/NavbarGuest";
 
 function ExternalPage() {
 	return (
 		<div className="bg-[#ecfffd]">
 			<NavbarGuest />
-			<Home />
+			<About />
 		</div>
 	);
 }

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const request = axios.create({
-//   baseURL: 'https://flaundry.somee.com/api/',
   baseURL: "http://ronalbo2610-001-site1.ftempurl.com/api/",
   headers: {
     "Content-Type": "application/json",

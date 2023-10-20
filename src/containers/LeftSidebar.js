@@ -26,7 +26,7 @@ function LeftSidebar() {
 
 				<li className="mb-2 font-semibold text-xl">
 					<Link to={"/app/dashboard"}>
-						<img className="w-10" src="/logo.png" alt="DashWind Logo" />
+						<img className="w-10" src="/logo.png" alt="Medkit Logo" />
 						Medkit
 					</Link>{" "}
 				</li>
