@@ -54,7 +54,9 @@ function Cart() {
 				quantity: amount,
 				total: total,
 				status: 1,
-				sellDate: new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON(),
+				sellDate: new Date(
+					date.getTime() - date.getTimezoneOffset() * 60000
+				).toJSON(),
 			};
 			let data = JSON.stringify(newOrder);
 			console.log("data", data);
@@ -103,14 +105,13 @@ function Cart() {
 				</div>
 				{/* <!--Right Col--> */}
 				<div className="w-full lg:w-15/24 text-left">
-					<h1 className="text-3xl font-medium text-center">Information</h1>
-
 					<div className="w-7/12 mx-auto ">
+						<h1 className="text-3xl font-bold">Information</h1>
 						<InputText
 							type="text"
 							defaultValue={order.custormerName}
 							updateType="custormerName"
-							containerStyle=""
+							containerStyle="mt-4"
 							labelTitle="Name"
 							updateFormValue={updateFormValue}
 							placeholder="Your name"

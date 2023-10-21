@@ -9,11 +9,11 @@ function Home() {
 		<div className="">
 			<div className="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start font-semibold">
 				{/* Left Col */}
-				<div className="flex flex-col w-full lg:w-6/12 justify-center lg:pt-20 items-start text-center lg:text-left mb-5 md:mb-0">
+				<div className="flex flex-col w-full lg:w-6/12 justify-center lg:pt-28 items-start text-center lg:text-left mb-5 md:mb-0">
 					<h1
 						data-aos="fade-right"
 						data-aos-once="true"
-						className="my-4 text-5xl font-bold leading-tight text-indigo-900"
+						className="my-4 text-[3.5rem] font-bold leading-tight text-indigo-900"
 					>
 						Family’s Medical Kit
 					</h1>
@@ -60,18 +60,19 @@ function Home() {
 					</div>
 				</div>
 				{/* Right Col */}
-				<div className="w-full lg:w-6/12 relative" id="girl">
+				<div className="w-full lg:w-6/12 relative">
 					<img
 						data-aos="fade-up"
 						data-aos-once="true"
-						className="w-10/12 mx-auto mt-16 mb-40 h-full"
+						className="w-full mx-auto my-16 h-full"
 						src="home.png"
+						alt="home"
 					/>
 					<div
 						data-aos="fade-up"
 						data-aos-delay="500"
 						data-aos-once="true"
-						className={`absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 ${classes.floating}`}
+						className={`absolute bottom-10 -left-4 sm:left-2 sm:bottom-10 lg:-left-4 ${classes.floating}`}
 					>
 						<img className="h-20 sm:h-28" src="userplus.png" alt="" />
 					</div>

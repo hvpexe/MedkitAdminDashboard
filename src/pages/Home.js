@@ -5,7 +5,7 @@ import NavbarGuest from "../features/user/components/NavbarGuest";
 
 function ExternalPage() {
 	return (
-		<div className="bg-[#ecfffd]">
+		<div className="bg-[#ecfffd] h-screen">
 			<NavbarGuest />
 			<Home />
 		</div>
