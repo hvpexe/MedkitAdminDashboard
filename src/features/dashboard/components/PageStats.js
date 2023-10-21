@@ -11,8 +11,8 @@ function PageStats({}){
         <HeartIcon className='w-8 h-8'/>
     </div>
     <div className="stat-title">Total Likes</div>
-    <div className="stat-value">25.6K</div>
-    <div className="stat-desc">21% more than last month</div>
+    <div className="stat-value">0</div>
+    <div className="stat-desc"></div>
   </div>
   
   <div className="stat">
@@ -20,8 +20,8 @@ function PageStats({}){
         <BoltIcon className='w-8 h-8'/>
     </div>
     <div className="stat-title">Page Views</div>
-    <div className="stat-value">2.6M</div>
-    <div className="stat-desc">14% more than last month</div>
+    <div className="stat-value">0</div>
+    <div className="stat-desc"></div>
   </div>
 </div>
     )

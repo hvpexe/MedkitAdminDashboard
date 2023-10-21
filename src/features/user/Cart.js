@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import InputText from "../../components/Input/InputText";
 import TextAreaInput from "../../components/Input/TextAreaInput";
 import ErrorText from "../../components/Typography/ErrorText";
+import axios from "axios";
 
 const INITIAL_ORDER_OBJ = {
-	name: "",
-	phone: "",
+	custormerName: "",
+	phoneNumber: "",
 	address: "",
 	payment: 0,
 	quantity: 0,
+	total: 0,
+	status: 1,
+	sellDate: null,
 };
 
 function Cart() {
 	var amount = localStorage.getItem("data");
 
 	let navigate = useNavigate();
-	// useEffect(() => {
-	// 	console.log("reload");
-	// 	if (isNaN(amount) || amount <= 0) {
-	// 		return navigate("/home");
-	// 	}
-	// }, [amount]);
+	useEffect(() => {
+		if (isNaN(amount) || amount <= 0) {
+			return navigate("/home");
+		}
+	}, [amount]);
 
 	var total = amount * 150000;
 	const totalFormat = total.toLocaleString("it-IT", {
@@ -34,20 +37,42 @@ function Cart() {
 	const [order, setOrder] = useState(INITIAL_ORDER_OBJ);
 
 	const createNewOrder = () => {
-		if (order.name.trim() === "") return setErrorMessage("Name is required!");
-		else if (order.phone.trim() === "")
+		if (order.custormerName.trim() === "")
+			return setErrorMessage("Name is required!");
+		else if (order.phoneNumber.trim() === "")
 			return setErrorMessage("Phone is required!");
 		else if (order.address.trim() === "")
 			return setErrorMessage("Address is required!");
 		else {
+			var date = new Date();
+
 			let newOrder = {
-				name: order.name,
-				phone: order.phone,
+				custormerName: order.custormerName,
+				phoneNumber: order.phoneNumber,
 				address: order.address,
 				payment: order.payment,
 				quantity: amount,
+				total: total,
+				status: 1,
+				sellDate: new Date(date.getTime() - date.getTimezoneOffset() * 60000).toJSON(),
 			};
-			console.log(newOrder);
+			let data = JSON.stringify(newOrder);
+			console.log("data", data);
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+				},
+			};
+			const response = axios
+				.post("api/Order", data, config)
+				.then((res) => {
+					if (res.status === 200) {
+						return navigate("/paymentSuccess");
+					} else {
+						return navigate("/home");
+					}
+				})
+				.catch((err) => setErrorMessage("Error in order"));
 		}
 	};
 
@@ -83,8 +108,8 @@ function Cart() {
 					<div className="w-7/12 mx-auto ">
 						<InputText
 							type="text"
-							defaultValue={order.name}
-							updateType="name"
+							defaultValue={order.custormerName}
+							updateType="custormerName"
 							containerStyle=""
 							labelTitle="Name"
 							updateFormValue={updateFormValue}
@@ -92,8 +117,8 @@ function Cart() {
 						/>
 						<InputText
 							type="text"
-							defaultValue={order.phone}
-							updateType="phone"
+							defaultValue={order.phoneNumber}
+							updateType="phoneNumber"
 							containerStyle="mt-4"
 							labelTitle="Phone"
 							updateFormValue={updateFormValue}

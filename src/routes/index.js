@@ -16,6 +16,7 @@ const Home = lazy(() => import('../pages/Home'))
 const Product = lazy(() => import('../pages/Product'))
 const About = lazy(() => import('../pages/About'))
 const Cart = lazy(() => import('../pages/Cart'))
+const PaymentSuccess = lazy(() => import('../pages/PaymentSuccess'))
 
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
   {
     path: '/cart', 
     component: Cart,
+  },
+  {
+    path: '/paymentSuccess', 
+    component: PaymentSuccess,
   },
   {
     path: '/dashboard', // the url

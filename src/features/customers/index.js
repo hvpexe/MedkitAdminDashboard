@@ -48,6 +48,15 @@ function Customers() {
 		else return <div className="text-pink-500">Female</div>;
 	};
 
+	const maskUUID = (uuid) => {
+		if (uuid.length !== 36) {
+			return uuid;
+		}
+
+		const maskedUUID = uuid.slice(0, 5) + "**************************" + uuid.slice(31);
+		return maskedUUID;
+	};
+
 	return (
 		<>
 			<TitleCard
@@ -72,7 +81,9 @@ function Customers() {
 							{customers.map((l, k) => {
 								return (
 									<tr key={k}>
-										<td>{l.id}</td>
+										<td className="min-w-[3rem] max-w-[10rem] whitespace-normal">
+											{l.id}
+										</td>
 										<td>
 											<div className="flex items-center space-x-3">
 												<div className="avatar">
@@ -88,7 +99,7 @@ function Customers() {
 										<td>{l.email}</td>
 										<td>{getGender(l.gender)}</td>
 										<td>{getDummyStatus(l.status)}</td>
-										<td>{l.productId}</td>
+										<td>{maskUUID(l.productId)}</td>
 									</tr>
 								);
 							})}

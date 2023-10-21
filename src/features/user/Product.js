@@ -2,13 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const INITIAL_ORDER_OBJ = {
-	name: "",
-	phone: "",
-	address: "",
-	payment: 0,
-	quantity: 0,
-};
 
 function Product() {
 	const [amount, setAmount] = useState(1);

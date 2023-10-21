@@ -35,7 +35,7 @@ function LineChart(){
   };
 
   
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'];
 
   const data = {
   labels,
@@ -43,7 +43,7 @@ function LineChart(){
     {
       fill: true,
       label: 'MAU',
-      data: labels.map(() => { return Math.random() * 100 + 500 }),
+      data: [0,0,0,0,0,0,0,0,0,1],
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
