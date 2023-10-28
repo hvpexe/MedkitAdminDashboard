@@ -19,6 +19,7 @@ const About = lazy(() => import("./pages/About"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Documentation = lazy(() => import("./pages/Documentation"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const Download = lazy(() => import("./pages/Download"));
 
 // Initializing different libraries
 initializeApp();
@@ -39,6 +40,7 @@ function App() {
 					<Route path="/home" element={<Home />} />
 					<Route path="/product" element={<Product />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/download" element={<Download />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/paymentSuccess" element={<PaymentSuccess />} />
 					<Route path="/login" element={<Login />} />

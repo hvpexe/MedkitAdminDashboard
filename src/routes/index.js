@@ -12,34 +12,9 @@ const OriginalMedicine = lazy(() => import('../pages/protected/OriginalMedicine'
 const GettingStarted = lazy(() => import('../pages/GettingStarted'))
 const DocFeatures = lazy(() => import('../pages/DocFeatures'))
 const DocComponents = lazy(() => import('../pages/DocComponents'))
-const Home = lazy(() => import('../pages/Home'))
-const Product = lazy(() => import('../pages/Product'))
-const About = lazy(() => import('../pages/About'))
-const Cart = lazy(() => import('../pages/Cart'))
-const PaymentSuccess = lazy(() => import('../pages/PaymentSuccess'))
 
 
 const routes = [
-  {
-    path: '/home', 
-    component: Home,
-  },
-  {
-    path: '/product', 
-    component: Product,
-  },
-  {
-    path: '/about', 
-    component: About,
-  },
-  {
-    path: '/cart', 
-    component: Cart,
-  },
-  {
-    path: '/paymentSuccess', 
-    component: PaymentSuccess,
-  },
   {
     path: '/dashboard', // the url
     component: Dashboard, // view rendered

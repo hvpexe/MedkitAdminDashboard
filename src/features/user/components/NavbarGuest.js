@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 function NavbarGuest() {
-	const location = useLocation(); 
+	const location = useLocation();
 	return (
 		<>
 			<div className="navbar bg-base-100">
@@ -36,6 +36,9 @@ function NavbarGuest() {
 							<li>
 								<Link to="/about">About us</Link>
 							</li>
+							<li>
+								<Link to="/download">Download App</Link>
+							</li>
 						</ul>
 					</div>
 					<Link className="btn btn-ghost normal-case text-xl" to={"/home"}>
@@ -45,14 +48,24 @@ function NavbarGuest() {
 				</div>
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-3 gap-4 text-lg ">
-						<li className={location.pathname === '/home' ? "font-bold" : ""}>
+						<li className={location.pathname === "/home" ? "font-bold" : ""}>
 							<Link to="/home">Home</Link>
 						</li>
-						<li className={(location.pathname === '/product' || location.pathname === '/cart') ? "font-bold" : ""}>
+						<li
+							className={
+								location.pathname === "/product" ||
+								location.pathname === "/cart"
+									? "font-bold"
+									: ""
+							}
+						>
 							<Link to="/product">Product</Link>
 						</li>
-						<li className={location.pathname === '/about' ? "font-bold" : ""}>
+						<li className={location.pathname === "/about" ? "font-bold" : ""}>
 							<Link to="/about">About us</Link>
+						</li>
+						<li className={location.pathname === "/download" ? "font-bold" : ""}>
+							<Link to="/download">Download App</Link>
 						</li>
 					</ul>
 				</div>

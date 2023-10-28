@@ -64,7 +64,8 @@ function Orders() {
 
 	const getPayment = (index) => {
 		if (index === 0) return <div className="badge badge-primary">COD</div>;
-		else return <div className="badge badge-accent">Card</div>;
+		if (index === 1) return <div className="badge badge-secondary">Momo</div>;
+		else return <div className="badge badge-accent">Banking</div>;
 	};
 	const getStatus = (index) => {
 		if (index === 0) return <div className="badge badge-success">Paid</div>;

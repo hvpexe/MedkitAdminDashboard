@@ -5,7 +5,7 @@ export const getOrdersContent = createAsyncThunk(
   "/orders/content",
   async () => {
     const response = await axios.get(
-      "api/Order/pagination?pageIndex=0&pageSize=100",
+      "api/Order",
       {}
     );
     return response;

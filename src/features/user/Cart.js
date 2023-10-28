@@ -34,6 +34,7 @@ function Cart() {
 
 	const [loading, setLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
+	const [payment, setPayment] = useState(0);
 	const [order, setOrder] = useState(INITIAL_ORDER_OBJ);
 
 	const createNewOrder = () => {
@@ -50,7 +51,7 @@ function Cart() {
 				custormerName: order.custormerName,
 				phoneNumber: order.phoneNumber,
 				address: order.address,
-				payment: order.payment,
+				payment: Number.parseInt(order.payment),
 				quantity: amount,
 				total: total,
 				status: 1,
@@ -79,9 +80,18 @@ function Cart() {
 	};
 
 	const updateFormValue = ({ updateType, value }) => {
+		console.log(updateType, " | ", value);
 		setErrorMessage("");
 		setOrder({ ...order, [updateType]: value });
 	};
+
+	const onOptionChange = (e) => {
+		setPayment(e.target.value);
+		setOrder({ ...order, "payment": e.target.value });
+		console.log(order);
+	};
+	console.log(order);
+
 
 	return (
 		<div className="bg-mintcream">
@@ -140,15 +150,55 @@ function Cart() {
 						>
 							Payment
 						</label>
-						<input
-							className="h-4 w-4"
-							type="radio"
-							id="COD"
-							name="payment"
-							value="COD"
-							checked
-						/>
-						<span className="text-lg ml-1">COD</span> <br />
+
+						<div className="form-control max-w-[10rem]">
+							<label className="label cursor-pointer">
+								<span className="label-text">COD</span>
+								<input
+									type="radio"
+									name="payment"
+									value={0}
+									id="COD"
+									className="radio checked:bg-red-500"
+									checked={payment === "0"}
+									onChange={onOptionChange}
+								/>
+							</label>
+							<label className="label cursor-pointer">
+								<span className="label-text ml-2">MOMO</span>
+								<input
+									type="radio"
+									name="payment"
+									value={1}
+									id="Momo"
+									className="radio checked:bg-blue-500"
+									checked={payment === "1"}
+									onChange={onOptionChange}
+								/>
+							</label>
+							<label className="label cursor-pointer">
+								<span className="label-text ml-2">Banking</span>
+								<input
+									type="radio"
+									name="payment"
+									value={2}
+									id="Banking"
+									className="radio checked:bg-blue-500"
+									checked={payment === "2"}
+									onChange={onOptionChange}
+								/>
+							</label>
+						</div>
+						<div className="form-control">
+							<label className="label cursor-pointer  max-w-[10rem]"></label>
+							{console.log(payment)}
+							<div className={`${payment === "1" ? "block" : "hidden"}`}>
+								<img src="momo.jpg" alt="momo" />
+							</div>
+							<div className={`${payment === "2" ? "block" : "hidden"}`}>
+								<img src="bank.jpg" alt="bank" />
+							</div>
+						</div>
 						<div className="text-2xl font-medium mt-3 text-purple-900">
 							Total: {totalFormat}
 						</div>

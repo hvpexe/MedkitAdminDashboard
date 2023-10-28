@@ -18,58 +18,74 @@ import axios from "axios";
 const STATS_DATA = [
 	{
 		title: "Users",
-		value: "0",
+		value: "1",
 		icon: <UserGroupIcon className="w-8 h-8" />,
 		description: "",
 	},
 	{
 		title: "Total Sales",
-		value: "0 VND",
+		value: "150.000 VND",
 		icon: <CreditCardIcon className="w-8 h-8" />,
 		description: "",
 	},
 	{
 		title: "Orders",
-		value: "0",
+		value: "2",
 		icon: <CircleStackIcon className="w-8 h-8" />,
 		description: "",
 	},
 	{
 		title: "Active Users",
-		value: "0",
+		value: "1",
 		icon: <UsersIcon className="w-8 h-8" />,
+		description: "",
+	},
+	{
+		title: "Users in this month",
+		value: "1",
+		icon: <UserGroupIcon className="w-8 h-8" />,
+		description: "",
+	},
+	{
+		title: "Total Sales in this month",
+		value: "150.000 VND",
+		icon: <CreditCardIcon className="w-8 h-8" />,
+		description: "",
+	},
+	{
+		title: "Orders in this month",
+		value: "2",
+		icon: <CircleStackIcon className="w-8 h-8" />,
 		description: "",
 	},
 ];
 
 function Dashboard() {
 	const dispatch = useDispatch();
-    const [statsData, setStatsData] =useState(STATS_DATA);
-
-    useEffect(() => {
-        axios
-				.get("api/Order/dashboard")
-				.then((res) => {
-					if (res.status === 200) {
-						statsData[0].value = res.data.numberofUser
-						statsData[1].value = `${res.data.price} VND`
-						statsData[2].value = res.data.numberofOrder
-						statsData[3].value = res.data.numberofActiveUser
-					} else {
-					}
-				})
-				.catch((err) => console.log(err));
-    }, [statsData])
-
-	const updateDashboardPeriod = (newRange) => {
-		// Dashboard range changed, write code to refresh your values
-		dispatch(
-			showNotification({
-				message: `Period updated to ${newRange.startDate} to ${newRange.endDate}`,
-				status: 1,
+	const [statsData, setStatsData] = useState(STATS_DATA);
+	
+	useEffect(() => {
+		const fetchData = async () => { 
+		await axios
+			.get("api/Order/dashboard")
+			.then((res) => {
+				if (res.status === 200) {
+					let newData = statsData;
+					newData[0].value = res.data.numberofUser;
+					newData[1].value = `${res.data.price} VND`;
+					newData[2].value = res.data.numberofOrder;
+					newData[3].value = res.data.numberofActiveUser;
+					newData[4].value = res.data.numberofUser;
+					newData[5].value = `${res.data.price} VND`;
+					newData[6].value = res.data.numberofOrder;
+					setStatsData(newData);
+				} else {
+				}
 			})
-		);
-	};
+		}
+		fetchData().catch(err => console.log(err))
+	}, []);
+
 
 	return (
 		<>
@@ -77,7 +93,7 @@ function Dashboard() {
 			<div className="grid lg:grid-cols-4 mt-2 md:grid-cols-2 grid-cols-1 gap-6">
 				{statsData.map((d, k) => {
 					return <DashboardStats key={k} {...d} colorIndex={k} />;
-				})}
+				})}	
 			</div>
 
 			{/** ---------------------- Different charts ------------------------- */}

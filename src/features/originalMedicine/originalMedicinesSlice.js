@@ -85,11 +85,10 @@ export const originalMedicinesSlice = createSlice({
 				const currentMed = state.originalMedicines.filter(
 					(med) => med.id !== action.payload
 				);
-				state.originalMedicines = currentMed
-			}	
+				state.originalMedicines = currentMed;
+			}
 			state.isLoading = false;
 		},
-
 		[deleteOriginalMedicines.rejected]: (state) => {
 			state.isLoading = false;
 		},

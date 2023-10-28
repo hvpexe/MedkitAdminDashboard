@@ -9,6 +9,7 @@ function DashboardStats({title, icon, value, description, colorIndex}){
     }
 
     return(
+        <>
         <div className="stats shadow">
             <div className="stat">
                 <div className={`stat-figur text-${COLORS[colorIndex%2]}`}>{icon}</div>
@@ -17,6 +18,15 @@ function DashboardStats({title, icon, value, description, colorIndex}){
                 <div className={"stat-desc  " + getDescStyle()}>{description}</div>
             </div>
         </div>
+        {/* <div className="stats shadow">
+            <div className="stat">
+                <div className={`stat-figur text-${COLORS[colorIndex%2]}`}>{icon}</div>
+                <div className="stat-title">{title}</div>
+                <div className={`stat-value text-${COLORS[colorIndex%2]}`}>{value}</div>
+                <div className={"stat-desc  " + getDescStyle()}>{description}</div>
+            </div>
+        </div> */}
+        </>
     )
 }
 
